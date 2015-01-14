@@ -12,7 +12,7 @@ do
 	fi
 	BASH=$(grep "/home" < /etc/passwd | grep $USERNAME: | cut -d: -f7)
 	LASTLOGIN=$(last $USERNAME | head -1 | awk '{ print $4 " " $5 " " $6 " " $7 }')
-	VELKOST=$(du $BASH -h -c | tail -1 | awk '{ print $1 }')
+	VELKOST=$(du $HOME -h -c 2> /dev/null | tail -1 | awk '{ print $1 }')
 	VELKOSTVLASTNIK=$(du -ch $(find / -user $USERNAME 2> /dev/null) -h -c 2> /dev/null | tail -1 | awk '{ print $1 }')
 
 	echo -n '<h1>'
