@@ -18,7 +18,7 @@ function Uloha-Operaky {
 
     Print-Title "uzivatel login: <b>$env:USERNAME</b>"
 
-    Print-Title "uzivatel cele meno <b>$((Get-WmiObject Win32_UserAccount -filter "name = 'patrik'").FullName)</b>"
+    Print-Title "uzivatel cele meno <b>$((Get-WmiObject Win32_UserAccount -filter "name = '$env:USERNAME'").FullName)</b>"
 
     Print-Title "domovsky adresar <b>$env:USERPROFILE</b>"
 
